@@ -7,16 +7,20 @@ c = coreclient.CoreSession()
 
 auth_user ="openpanel-admin"
 auth_pw   = os.environ["AUTHD_PASSWORD"]
+env_user  = os.environ["AUTHD_ACCOUNT"]
 
-try:
-	c.login(user=auth_user, password=auth_pw)
-except:
-	print "auth_ok:-1"
+if env_user != "admin":
+    print "auth_ok:-1"
 else:
-	print "auth_ok:1"
-	print "uid:33"
-	print "gid:33"
-	print "dir:/var/www"
-	print "slow_tilde_expansion:1"
+    try:
+    	c.login(user=auth_user, password=auth_pw)
+    except:
+    	print "auth_ok:-1"
+    else:
+    	print "auth_ok:1"
+    	print "uid:33"
+    	print "gid:33"
+    	print "dir:/var/www"
+    	print "slow_tilde_expansion:1"
 
 print "end"
