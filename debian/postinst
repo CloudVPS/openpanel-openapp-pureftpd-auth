@@ -30,8 +30,8 @@ case "$1" in
     configure)
         if [ -z "$2" ]; then
             echo "Disabling other authentication modules for pure-ftpd"
-            rm /etc/pure-ftpd/auth/65unix
-            rm /etc/pure-ftpd/auth/70pam
+            [ -e /etc/pure-ftpd/auth/65unix ] && rm /etc/pure-ftpd/auth/65unix
+            [ -e /etc/pure-ftpd/auth/70pam ] && rm /etc/pure-ftpd/auth/70pam
         fi
         [ -e /var/run/pure-ftpd/pure-authd.pid ] && stop pure-authd
         [ -f /etc/init/pure-authd.conf ] && start pure-authd
