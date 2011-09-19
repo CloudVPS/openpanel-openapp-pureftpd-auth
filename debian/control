@@ -1,0 +1,14 @@
+Source: openpanel-openapp-pureftpd-auth
+Section: misc
+Priority: optional
+Maintainer: OpenPanel packager <packages@openpanel.com>
+Build-Depends: debhelper (>= 5), openpanel-dev
+Standards-Version: 3.7.2
+
+Package: openpanel-openapp-pureftpd-auth
+Architecture: any
+Pre-Depends: pure-ftpd-common
+Depends: python (>= 2.4), pure-ftpd, python-openpanel
+Description: Let Pure-FTPD authenticate against OpenPanel
+ This will configure Pure-FTPD to authenticate against OpenPanel. OpenApp needs
+ this functionality.
