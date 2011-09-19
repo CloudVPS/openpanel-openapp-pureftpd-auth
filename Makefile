@@ -6,6 +6,7 @@ install:
 	cp sbin/openapp-pureftpd-auth $(PREFIX)/usr/sbin
 	mkdir -p $(PREFIX)/etc/
 	cp -r etc/ $(PREFIX)
+	mkdir -p $(PREFIX)/etc/pure-ftpd/auth
 	ln -sf ../conf/ExtAuth $(PREFIX)/etc/pure-ftpd/auth/20extauth
 
 
