@@ -11,4 +11,4 @@ Pre-Depends: pure-ftpd-common
 Depends: python (>= 2.4), pure-ftpd, python-openpanel
 Description: Let Pure-FTPD authenticate against OpenPanel
  This will configure Pure-FTPD to authenticate against OpenPanel. OpenApp needs
- this functionality.
+ this functionality. 
