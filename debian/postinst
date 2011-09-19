@@ -32,6 +32,8 @@ case "$1" in
             echo "Disabling other authentication modules for pure-ftpd"
             [ -e /etc/pure-ftpd/auth/65unix ] && rm /etc/pure-ftpd/auth/65unix
             [ -e /etc/pure-ftpd/auth/70pam ] && rm /etc/pure-ftpd/auth/70pam
+
+            echo '33' > /etc/pure-ftpd/conf/MinUID
         fi
         [ -e /var/run/pure-ftpd/pure-authd.pid ] && stop pure-authd
         [ -f /etc/init/pure-authd.conf ] && start pure-authd
